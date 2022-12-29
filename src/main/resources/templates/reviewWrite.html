@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>한줄 리뷰</title>
+</head>
+<body>
+    <!-- 리뷰 별점 -->
+            <div class="write_act">
+                <p class="title_star">별점과 이용경험을 남겨주세요.</p>
+                <div class="review_rating rating_point">
+                    <div class="rating">
+                        <!-- [D] 해당 별점이 선택될 때 그 점수 이하의 input엘리먼트에 checked 클래스 추가 -->
+                        <input type="checkbox" name="rating2" value="1" class="rating_rdo" title="1점"/>
+                        <span class="span"></span>
+                        <input type="checkbox" name="rating3" value="2" class="rating_rdo" title="2점"/>
+                        <span class="span"></span>
+                        <input type="checkbox" name="rating4" value="3" class="rating_rdo" title="3점"/>
+                        <span class="span"></span>
+                        <input type="checkbox" name="rating5" value="4" class="rating_rdo" title="4점"/>
+                        <span class="span"></span>
+                        <input type="checkbox" name="rating6" value="5" class="rating_rdo" title="5점"/>
+                        <span class="span"></span>
+                        <!-- [D] 0점일 때 gray_star 추기 -->
+                        <span class="star_rank gray_star">0</span>
+                    </div>
+                </div>
+            </div>
+            <!-- //리뷰 별점 -->
+   
+            <!-- 리뷰 입력 -->
+            <div class="review_contents write">
+                <!-- [D] review_write_info 클릭 시 자신을 숨기고 review_textarea 에 focus를 보낸다. -->
+                <a href="#" class="review_write_info">
+              <span class="middot">
+                선플 선플 </span
+              ><br/>
+                   
+                   
+                <textarea cols="30" rows="10" class="review_textarea"></textarea>
+            </div>
+            <!-- //리뷰 입력 -->
+      <!-- 리뷰 등록 -->
+            <div class="box_bk_btn">
+                <button class="bk_btn">
+                    <span class="btn_txt">리뷰 등록</span>
+                </button>
+            </div>
+            <!-- //리뷰 등록 -->
+   
+   
+   
+</body>
+</html>

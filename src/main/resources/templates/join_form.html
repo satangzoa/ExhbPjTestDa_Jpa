@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{https://getbootstrap.com/docs/5.2/assets/css/docs.css}" rel="stylesheet">
+<link th:href="@{/css/layout.css}" rel="stylesheet" >
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--     Fonts and icons     -->
+<link rel="stylesheet" type="text/css" th:href="@{https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons}" />
+
+<title>회원 가입</title>
+</head>
+<body>
+     <div th:replace="inc/header::header"></div>
+     <div class="container">
+		
+		<form th:action="@{/joinOk}" method="post" th:object="${memberForm}">
+		  <div>
+				<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+					<div th:each="err:${#fields.allErrors()}" th:text="${err}"></div>
+				</div>	
+			</div>		
+			<div>
+				<label class="form-label">사용자ID</label>
+				<input type="text" name="muserid" class="form-control" th:field="*{muserid}">
+			</div>
+			<div>
+				<label class="form-label">이름</label>
+				<input type="text" name="musername" class="form-control" th:field="*{musername}">
+			</div>
+			<div>
+				<label class="form-label">비밀번호</label>
+				<input type="password" name="mpw" class="form-control" th:field="*{mpw}"></textarea>
+			</div>
+			<div>
+				<label class="form-label">이메일</label>
+				<input type="text" name="memail" class="form-control" th:field="*{memail}">
+			</div>
+			<input type="submit" value="회원가입" class="btn btn-primary my-2">
+			<input type="text" value="취소" class="btn btn-primary" th:onclick="|location.href='@{/index}'|" style="width:60px">
+		</form>	
+	</div>	
+	
+	<div th:replace="inc/footer::footer"></div>
+</body>
+</html>
